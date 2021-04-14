@@ -6,6 +6,7 @@
 package date;
 
 import java.time.LocalDate;
+import java.util.Scanner;
 
 /**
  *
@@ -16,10 +17,26 @@ public class DateJava {
     /**
      * @param args the command line arguments
      */
+    static Scanner scan = new Scanner(System.in);
+    
     public static void main(String[] args) {
         
+        showTodaysDate();
+        System.out.println("How many days would you like to add?: ");
+        daysAddition(scan.nextLong());
+        
+        
+    }
+    
+    public static void showTodaysDate(){
         LocalDate date = LocalDate.now();
         System.out.println("Today's date: "+date);
     }
     
+    public static void daysAddition(long daysCount){
+        LocalDate date = LocalDate.now();
+        System.out.print(date+" plus "+ daysCount+" is ");
+        date = date.plusDays(daysCount);
+        System.out.println(date);
+    }    
 }
