@@ -5,6 +5,8 @@
  */
 package date;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author Javi
@@ -16,7 +18,8 @@ public class DateJava {
      */
     public static void main(String[] args) {
         
-        
+        LocalDate date = LocalDate.now();
+        System.out.println("Today's date: "+date);
     }
     
 }
