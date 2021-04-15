@@ -29,6 +29,13 @@ public class DateJava {
         
         
     }
+    
+    //parses a date on a string to a LocalDate
+    public static LocalDate stringToDate(String date){
+        DateTimeFormatter usDateFormat = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+        LocalDate theDate = LocalDate.parse(date, usDateFormat);
+        return theDate;
+    }
     public static void showUSDateFormat(){
         LocalDate today = LocalDate.now();
         DateTimeFormatter usDateFormat = DateTimeFormatter.ofPattern("MM-dd-yyyy");
