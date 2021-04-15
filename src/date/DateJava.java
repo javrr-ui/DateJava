@@ -6,6 +6,7 @@
 package date;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 /**
@@ -22,10 +23,16 @@ public class DateJava {
     public static void main(String[] args) {
         
         showTodaysDate();
+        showUSDateFormat();
         System.out.println("How many days would you like to add?: ");
         daysAddition(scan.nextLong());
         
         
+    }
+    public static void showUSDateFormat(){
+        LocalDate today = LocalDate.now();
+        DateTimeFormatter usDateFormat = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+        System.out.println("US date format: "+today.format(usDateFormat));
     }
     
     public static void showTodaysDate(){
